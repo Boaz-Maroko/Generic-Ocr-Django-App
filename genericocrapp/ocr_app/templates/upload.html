@@ -1,14 +1,21 @@
 <!DOCTYPE html>
 <html>
 <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>OCR Upload</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM" crossorigin="anonymous"></script>
+
 </head>
-<h1>Upload an Image</h1>
-<form method="POST" enctype="multipart/form-data">
+<h1 class="h1">Upload an Image</h1>
+<div class="container-sm">
+<form method="POST" class="d-flex flex-column align-items-center" enctype="multipart/form-data">
     {% csrf_token %}
-    <input type="file" name="image">
-    <button type="submit" name="action" value="ocr">Perform OCR</button>
-    <button type="submit" name="action" value="convert_to_pdf">Convert to PDF</button>
+    <input type="file" class="form-control flex-fill" name="image">
+    <button type="submit" class="btn btn-primary my-2 col-2" name="action" value="ocr">Perform OCR</button>
+    <button type="submit" class="btn btn-primary my-2 col-2" name="action" value="convert_to_pdf">Convert to PDF</button>
 </form>
+</div>
 </body>
 </html>
