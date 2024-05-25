@@ -9,9 +9,9 @@ def ocr_image(imag_path):
     try:
         image = Image.open(imag_path)
 
-        text = pytesseract.image_to_string(image)
+        pdf = pytesseract.image_to_string(image)
 
-        return text
+        return pdf
     
     except Exception as e:
         return str(e)

@@ -3,17 +3,12 @@
 <head>
     <title>OCR Upload</title>
 </head>
-<body>
-    <h1>Upload an Image for OCR</h1>
-    <form method="POST" enctype="multipart/form-data">
-        {% csrf_token %}
-        <input type="file" name="image">
-        <button type="submit">Upload</button>
-    </form>
-    {% if text %}
-        <h2>OCR Result:</h2>
-        <!-- Use safe filter to render HTML -->
-        <div>{{ text|safe }}</div>
-    {% endif %}
+<h1>Upload an Image</h1>
+<form method="POST" enctype="multipart/form-data">
+    {% csrf_token %}
+    <input type="file" name="image">
+    <button type="submit" name="action" value="ocr">Perform OCR</button>
+    <button type="submit" name="action" value="convert_to_pdf">Convert to PDF</button>
+</form>
 </body>
 </html>
